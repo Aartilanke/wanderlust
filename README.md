@@ -28,25 +28,30 @@ _I'd love for you to make the most of this project - it's all about learning, he
 
 2. **Navigate to the Backend Directory**
 
-   ```bash
 	# Download and install nvm:
+```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
-
+```
 # in lieu of restarting the shell
+```bash
 \. "$HOME/.nvm/nvm.sh"
-
+```
 #reboot machin & again connect----
 # Download and install Node.js:
+```bash
 nvm install 22
-
+```
 # Verify the Node.js version:
+```bash
 node -v # Should print "v22.14.0".
 nvm current # Should print "v22.14.0".
-
+```
 # Verify npm version:
+```bash
 npm -v # Should print "10.9.2".
-
-   cd backend
+```
+```bash   
+cd backend
    ```
 
 3. **Install Required Dependencies**
