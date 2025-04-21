@@ -1,0 +1,37 @@
+    1  sudo apt update
+    2  sudo apt install git -y
+    3  git clone https://github.com/Aartilanke/wanderlust.git
+    4  cd wanderlust/
+    5  ls
+    6  cd backend/
+    7  cd
+    8  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+    9  npm install 21
+   10  sudo reboot
+   11  nvm install 21
+   12  cd wanderlust/backend/
+   13  npm i
+   14  cd
+   15  sudo apt-get install gnupg curl
+   16  curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc |    sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg    --dearmor
+   17  echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+   18  echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+   19  sudo apt update
+   20  sudo apt-get install -y mongodb-org
+   21  sudo systemctl start mongod
+   22  mogosh
+   23  mongosh
+   24  cd wanderlust/backend/
+   25  mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
+   26  ls -a
+   27  cat env.s
+   28  cat env.sample
+   29  cat .env.sample
+   30  cp .env.sample .env
+   31  npm start
+   32  history
+   33  history>>command.txt
+   34  ls
+   35  history>command.txt
+   36  ls
+   37  history > command.txt

@@ -29,6 +29,23 @@ _I'd love for you to make the most of this project - it's all about learning, he
 2. **Navigate to the Backend Directory**
 
    ```bash
+	# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+#reboot machin & again connect----
+# Download and install Node.js:
+nvm install 22
+
+# Verify the Node.js version:
+node -v # Should print "v22.14.0".
+nvm current # Should print "v22.14.0".
+
+# Verify npm version:
+npm -v # Should print "10.9.2".
+
    cd backend
    ```
 
@@ -40,6 +57,38 @@ _I'd love for you to make the most of this project - it's all about learning, he
 
 4. **Set up your MongoDB Database**
 
+**Import the public key.**
+```bash
+#From a terminal, install gnupg and curl if they are not already available:
+sudo apt-get install gnupg curl
+
+#To import the MongoDB public GPG key, run the following command:
+curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
+   --dearmor
+
+```
+**Create the list file.**
+```bash
+
+echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+```
+**Reload the package database.**
+
+```bash
+
+sudo apt-get update
+```
+**Install MongoDB Community Server.**
+```bash
+
+sudo apt-get install -y mongodb-org
+```
+**Start MongoDB**
+```bash
+
+sudo systemctl start mongod
+```
    - Open MongoDB Compass and connect MongoDB locally at `mongodb://localhost:27017`.
 
 5. **Import sample data**
